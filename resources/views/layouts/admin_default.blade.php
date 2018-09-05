@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;margin-bottom: 10px">
         <a href="{{route('admin_home')}}" class="navbar-brand"><img src="{{URL::asset('images/logo.png')}}"
                                                               style="height: 30px;width: 90px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

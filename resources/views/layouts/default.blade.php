@@ -11,8 +11,9 @@
     @yield('css')
 </head>
 <body>
-<div class="container">
-<nav class="navbar navbar-expand-lg navbar-light style='background-color: #e3f2fd;'">
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; margin-bottom: 10px">
+    <div class="container">
     <a href="{{route('home')}}" class="navbar-brand"><img src="{{URL::asset('images/logo.png')}}"
                                                           style="height: 30px;width: 90px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -183,8 +184,9 @@
 
         </ul>
     </div>
+    </div>
 </nav>
-
+<div class="container">
     @include('layouts._errors')
     @include('layouts._message')
     @yield('content')

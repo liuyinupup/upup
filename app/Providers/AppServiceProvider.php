@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Category;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,6 +14,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        view()->composer(
+            'layouts.default',function ($view) {
+            $categories = Category::all();
+            $view->with('categories', $categories);
+        });
         \Schema::defaultStringLength(191);
         //
     }

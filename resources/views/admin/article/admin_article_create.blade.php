@@ -1,4 +1,9 @@
-@extends('layouts.default_admin')
+@extends('layouts.admin_default')
+@section('css')
+    <link rel="stylesheet" href="{{URL::asset('packages/editor.md/examples/css/style.css')}}"/>
+    <link rel="stylesheet" href="{{URL::asset('packages/editor.md/css/editormd.css')}}"/>
+    {{--<link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>--}}
+@endsection
 @section('content')
     <form action="{{route('article.store')}}" method="post">
         @csrf
@@ -19,12 +24,35 @@
         <div class="form-group">
             <label for="inputAddress">文章内容</label>
             <div id="test-editormd">
-                <textarea name="content" style="display:none;"></textarea>
+                <textarea style="display:none;" name="content"></textarea>
             </div>
-
-            @include('markdown::encode',['editors'=>['test-editormd']])
         </div>
-        <button type="submit" class="btn btn-primary">提交</button>
+        <button type="submit" class="btn btn-danger">提交</button>
     </form>
+    <script src="{{URL::asset('js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{URL::asset('packages/editor.md/editormd.min.js')}}"></script>
+    <script type="text/javascript">
+        var testEditor;
+
+        $(function () {
+            testEditor = editormd("test-editormd", {
+                width: "90%",
+                height: 640,
+                tex: true,
+                syncScrolling: "single",
+                path: "/packages/editor.md/lib/"
+            });
+
+            /*
+            // or
+            testEditor = editormd({
+                id      : "test-editormd",
+                width   : "90%",
+                height  : 640,
+                path    : "../lib/"
+            });
+            */
+        });
+    </script>
 
 @endsection

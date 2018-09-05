@@ -1,4 +1,4 @@
-@extends('layouts.default_admin')
+@extends('layouts.admin_default')
 @section('nav')
     <h1>文章管理</h1>
 @endsection

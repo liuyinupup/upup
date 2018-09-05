@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+    <link rel="shortcut icon" href="{{URL::asset('images/icon.ico')}}" />
+    @yield('css')
 </head>
 <body>
 <div class="container">
@@ -23,6 +25,7 @@
                 <a class="nav-link" href="{{route('user.index')}}">用户列表</a>
             </li>
             {{--{{$categories=\App\Category::all()}}--}}
+            {{--父目录--}}
             @foreach($categories as $category)
                 @if($category['pid']==0)
                     <li class="nav-item dropdown">
@@ -31,9 +34,10 @@
                             {{$category['name']}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {{--子目录--}}
                            @foreach($categories as $subcate)
                                @if($subcate['pid']==$category['id'])
-                                    <a class="dropdown-item" href="#">{{$subcate['name']}}</a>
+                                    <a class="dropdown-item" href="{{route('category.show',$subcate)}}">{{$subcate['name']}}</a>
                                 @endif
                                @endforeach
                         </div>
@@ -187,5 +191,6 @@
 </div>
 
 <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
+@yield('js')
 </body>
 </html>

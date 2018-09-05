@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Category;
 use Illuminate\Http\Request;
 
@@ -47,6 +48,10 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+
+        $articles=Article::all();
+        $articleForUser=Article::firstOr();
+        return view('category_show',compact('category','articles','articleForUser'));
         //
     }
 

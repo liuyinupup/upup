@@ -1,16 +1,31 @@
-@extends('layouts.admin_default')
+@extends('layouts.default')
 @section('css')
     {{--<link rel="stylesheet" href="{{URL::asset('packages/editor.md/examples/css/style.css')}}"/>--}}
     <link rel="stylesheet" href="{{URL::asset('packages/editor.md/css/editormd.preview.css')}}"/>
 @endsection
 @section('content')
-    <div id="layout">
-        <div id="test-editormd-view2">
-                <textarea id="append-test" style="display:none;">
-                    {{$article['content']}}
-                </textarea>
+    <div class="row">
+        <div class="col-md-2" >
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">
+                    {{$category['name']}}
+                </a>
+                @foreach($articles as $article)
+                    <a href="{{route('article.show',$article)}}" class="list-group-item list-group-item-action">{{$article['title']}}</a>
+                    @endforeach
+            </div>
         </div>
+        <div class="col-md-10" >
+            <div id="layout">
+                <div id="test-editormd-view2">
+                <textarea id="append-test" style="display:none;">
+                    {{$articleForUser['content']}}
+                </textarea>
+                </div>
+            </div></div>
     </div>
+@endsection
+@section('js')
     <script src="{{URL::asset('packages/editor.md/examples/js/jquery.min.js')}}"></script>
     <script src="{{URL::asset('packages/editor.md/lib/marked.min.js')}}"></script>
     <script src="{{URL::asset('packages/editor.md/lib/prettify.min.js')}}"></script>
@@ -62,6 +77,4 @@
             });
         });
     </script>
-@endsection
-@section('js')
-@endsection
+    @endsection

@@ -19,3 +19,5 @@ Route::post('login','LoginController@store')->name('login');
 Route::get('admin','IndexController@admin_home')->name('admin_home');
 Route::resource('category','CategoryController');
 Route::resource('article','ArticleController');
+Route::get('article/show_to_user','ArticleController@show_to_user')->name('article.show_to_user');
+

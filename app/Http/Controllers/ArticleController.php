@@ -59,6 +59,10 @@ class ArticleController extends Controller
     {
         return view('admin.article.admin_article_show',compact('article'));
     }
+    public function show_to_user(Article $articleForUser)
+    {
+        return view('category_show',compact('articleForUser'));
+    }
 
     /**
      * Show the form for editing the specified resource.

@@ -22,25 +22,30 @@
         </div>
 
         {{--<div class="form-group">--}}
-            {{--<label for="inputAddress">文章内容</label>--}}
-            <div id="test-editormd">
-                <textarea style="display:none;" name="content" ></textarea>
-            </div>
+        {{--<label for="inputAddress">文章内容</label>--}}
+        <div id="test-editormd">
+            <textarea style="display:none;" name="content"></textarea>
+        </div>
         {{--</div>--}}
-        <button type="submit" class="btn btn-primary">提交</button>
+        <button type="submit" class="btn btn-primary ">提交</button>
     </form>
+
+@endsection
+@section('js')
     <script src="{{URL::asset('js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{URL::asset('packages/editor.md/editormd.min.js')}}"></script>
+    <script src="{{URL::asset('packages/editor.md/editormd.js')}}"></script>
     <script type="text/javascript">
-        var testEditor;
+
 
         $(function () {
-            testEditor = editormd("test-editormd", {
+            var testEditor = editormd("test-editormd", {
                 width: "100%",
                 height: 640,
                 tex: true,
+
                 syncScrolling: "single",
-                path: "/packages/editor.md/lib/"
+                path: "/packages/editor.md/lib/",
+                flowChart: true,
             });
 
             /*

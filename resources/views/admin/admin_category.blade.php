@@ -9,7 +9,7 @@
             <a href="#">添加目录</a>
         </div>
         <div class="card-body">
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
                 <tr>
                     <th>编号</th>

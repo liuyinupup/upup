@@ -5,14 +5,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>流萤同学</title>
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
     <link rel="shortcut icon" href="{{URL::asset('images/icon.ico')}}" />
     @yield('css')
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; margin-bottom: 10px">
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd; margin-bottom: 10px">
     <div class="container">
     <a href="{{route('home')}}" class="navbar-brand"><img src="{{URL::asset('images/logo.png')}}"
                                                           style="height: 30px;width: 90px"></a>
@@ -153,7 +153,6 @@
                                 <div class="modal-body">
                                     <form action="{{route('login')}}" method="post">
                                         @csrf
-
                                         <div class="card">
                                             <div class="card-header">
                                                 用户登录

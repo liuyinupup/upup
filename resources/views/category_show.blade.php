@@ -6,12 +6,13 @@
 @section('content')
     <div class="row">
         <div class="col-md-2" >
-            <div class="list-group">
+
+            <div class="list-group " >
                 <a href="#" class="list-group-item list-group-item-action active">
                     {{$category['name']}}
                 </a>
                 @foreach($articles as $article)
-                    <a href="{{route('article.show',$article)}}" class="list-group-item list-group-item-action">{{$article['title']}}</a>
+                    <a href="{{route('article.show',$article)}}" class="list-group-item list-group-item-action" style="padding: 0.2rem 0.3rem;">{{$article['title']}}</a>
                     @endforeach
             </div>
         </div>

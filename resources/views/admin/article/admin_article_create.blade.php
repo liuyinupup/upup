@@ -9,7 +9,7 @@
         <div class="form-row">
             <div class="form-group col-md-3">
 
-                <input type="number" class="form-control" id="inputPassword4" placeholder="目录id" name="cate_id">
+                <input type="number" class="form-control" id="inputPassword4" placeholder="目录id" name="category_id">
             </div>
             <div class="form-group col-md-3">
 

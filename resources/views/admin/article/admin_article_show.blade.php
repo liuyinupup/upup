@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{{URL::asset('packages/editor.md/css/editormd.preview.css')}}"/>
 @endsection
 @section('content')
+    <h1>{{$category['name']}}</h1>
     <div id="layout">
         <div id="test-editormd-view2">
                 <textarea id="append-test" style="display:none;">

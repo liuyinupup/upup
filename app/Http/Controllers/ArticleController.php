@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -57,12 +58,17 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return view('admin.article.admin_article_show',compact('article'));
+        $category=Category::find($article['category_id']);
+
+            return view('admin.article.admin_article_show',compact('article','category'));
+
     }
-    public function show_to_user(Article $articleForUser)
+    public function show2(Article $article)
     {
-        return view('category_show',compact('articleForUser'));
+        dd($article['title']);
+
     }
+
 
     /**
      * Show the form for editing the specified resource.

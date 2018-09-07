@@ -24,7 +24,7 @@
                 @foreach($articles as $article)
                     <tr>
                         <td scope="row">{{$article['id']}}</td>
-                        <td>{{$article['cate_id']}}</td>
+                        <td>{{$article['category_id']}}</td>
                         <td>{{$article['order']}}</td>
                         <td>{{$article['title']}}</td>
                         <td>

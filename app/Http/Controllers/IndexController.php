@@ -16,12 +16,16 @@ class IndexController extends Controller
     {
         return view('admin.admin_home');
     }
-    public function article_display(Category $subcate)
+    public function article_display(Article $article)
     {
+        dd($article['title']);
         return view('article_display',compact('subcate'));
     }
     public function article_list()
     {
         return view('admin.admin_home');
+    }
+    public function category_article(Category $category,Article $article){
+        return view('articles.article_show',compact('category','article'));
     }
 }

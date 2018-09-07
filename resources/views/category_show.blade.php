@@ -13,7 +13,7 @@
                 </a>
                 @if(count($articles)>0)
                     @foreach($articles as $article)
-                        <a href="{{route('article.show',$article)}}" class="list-group-item list-group-item-action"
+                        <a href="{{route('category_article',[$category,$article])}}" class="list-group-item list-group-item-action"
                            style="padding: 0.2rem 0.3rem;">{{$article['title']}}</a>
                     @endforeach
                 @endif

@@ -5,25 +5,29 @@
 @endsection
 @section('content')
     <div class="row">
-        <div class="col-md-2" >
+        <div class="col-md-2">
 
-            <div class="list-group " >
+            <div class="list-group ">
                 <a href="#" class="list-group-item list-group-item-action active">
                     {{$category['name']}}
                 </a>
-                @foreach($articles as $article)
-                    <a href="{{route('article.show',$article)}}" class="list-group-item list-group-item-action" style="padding: 0.2rem 0.3rem;">{{$article['title']}}</a>
+                @if(count($articles)>0)
+                    @foreach($articles as $article)
+                        <a href="{{route('article.show',$article)}}" class="list-group-item list-group-item-action"
+                           style="padding: 0.2rem 0.3rem;">{{$article['title']}}</a>
                     @endforeach
+                @endif
             </div>
         </div>
-        <div class="col-md-10" >
+        <div class="col-md-10">
             <div id="layout">
                 <div id="test-editormd-view2">
                 <textarea id="append-test" style="display:none;">
                     {{$articleForUser['content']}}
                 </textarea>
                 </div>
-            </div></div>
+            </div>
+        </div>
     </div>
 @endsection
 @section('js')
@@ -78,4 +82,4 @@
             });
         });
     </script>
-    @endsection
+@endsection

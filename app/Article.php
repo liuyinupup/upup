@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     protected $fillable = [
-        'cate_id', 'order','title','content'
+        'category_id', 'order','title','content'
     ];
 }

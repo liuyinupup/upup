@@ -56,7 +56,7 @@
         <ul class="navbar-nav mr-auto">
             @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('logout')}}">注销</a>
+                    <a class="nav-link" href="{{route('logout')}}">退出</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('user.edit',auth()->user())}}">修改</a>

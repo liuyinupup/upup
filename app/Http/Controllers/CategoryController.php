@@ -49,7 +49,8 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
 
-        $articles=Article::all();
+        $articles=$category->articles;
+
         $articleForUser=Article::firstOr();
         return view('category_show',compact('category','articles','articleForUser'));
         //

@@ -26,6 +26,7 @@ class IndexController extends Controller
         return view('admin.admin_home');
     }
     public function category_article(Category $category,Article $article){
-        return view('articles.article_show',compact('category','article'));
+        $articles=$category->articles;
+        return view('articles.article_show',compact('category','articles','article'));
     }
 }
